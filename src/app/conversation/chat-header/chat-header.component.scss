@@ -1,0 +1,59 @@
+$nav-height: 50px;
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #075E54;
+    div {
+        background-color: inherit;
+        color: white;
+    }
+}
+
+.circular {
+    width: $nav-height;
+    height: $nav-height;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 7px;
+    img {
+        width: auto;
+        height: 100%;
+        margin-left: -28%;
+    }
+}
+
+.conv-title {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    width: 100;
+    padding: 0 0.5em;
+    div {
+        vertical-align: middle;
+        font-size: 1.2em;
+        text-anchor: middle;
+    }
+}
+
+.btn-div {
+    display: flex;
+    font-size: 48px;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background-color: #128C7E !important;
+    }
+}
+
+button {
+    display: contents;
+    color: white;
+}
