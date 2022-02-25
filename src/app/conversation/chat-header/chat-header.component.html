@@ -1,28 +1,12 @@
 <div class="navbar">
-    <div class="btn-div circular">
-        <button id="back-btn" onclick="console.log('clicked')">
-            <span class="material-icons">arrow_back</span>
-        </button>
-    </div>
+    <mat-icon-btn class="circular" onclick="console.log('going back')">arrow_back</mat-icon-btn>
     <div class="conv-pic circular">
         <img [src]="this.picture" />
     </div>
     <div class="conv-title">
         <div>{{ this.convTitle }}</div>
     </div>
-    <div class="btn-div circular">
-        <button id="video-btn" onclick="console.log('calling on video')">
-            <span class="material-icons">videocam</span>
-        </button>
-    </div>
-    <div class="btn-div circular">
-        <button id="video-btn" onclick="console.log('calling on video')">
-            <span class="material-icons">videocam</span>
-        </button>
-    </div>
-    <div class="btn-div circular">
-        <button id="video-btn" onclick="console.log('calling on video')">
-            <span class="material-icons">videocam</span>
-        </button>
-    </div>
+    <mat-icon-btn class="circular" onclick="console.log('video1')">videocam</mat-icon-btn>
+    <mat-icon-btn class="circular" onclick="console.log('video2')">videocam</mat-icon-btn>
+    <mat-icon-btn class="circular" onclick="console.log('video3')">videocam</mat-icon-btn>
 </div>

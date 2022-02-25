@@ -6,13 +6,15 @@ import { ConversationComponent } from './conversation/conversation.component';
 import { ChatHeaderComponent } from './conversation/chat-header/chat-header.component';
 import { DalService } from './services/dal.service';
 import { MessageInputComponent } from './conversation/message-input/message-input.component';
+import { MatIconBtnComponent } from './mat-icon-btn.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConversationComponent,
     ChatHeaderComponent,
-    MessageInputComponent
+    MessageInputComponent,
+    MatIconBtnComponent
   ],
   imports: [
     BrowserModule
