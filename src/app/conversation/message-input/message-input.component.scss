@@ -1,0 +1,51 @@
+$border-size: 45px;
+:host {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden !important;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.input-wrapper {
+    display: flex;
+    background-color: white;
+    flex-grow: 1;
+    max-height: 50px;
+    margin: 5px;
+    border-radius: 1em;
+    padding: 0 1em;
+    overflow: hidden;
+}
+
+input {
+    border: 0; //black 1px solid;
+    width: 100%;
+    font-size: 1em;
+    direction: ltr;
+    margin: 5px;
+    &:focus {
+        outline: none;
+    }
+}
+
+#attachment-btn {
+    transform: rotateZ(calc(180deg + 45deg));
+}
+
+.start-buttons {
+    position: relative;
+    left: -1em;
+    margin-right: -1em;
+}
+
+.end-buttons {
+    display: flex;
+    position: relative;
+    right: -1em;
+}

@@ -3,34 +3,56 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'mat-icon-btn',
   template: `
-    <div class="btn-div" (mouseenter)="this.colorDiv(this.hoverColor)" (mouseleave)="this.colorDiv(this.baseColor)" [ngStyle]="{'background-color': this._currentColor}">
-      <button>
-          <span class="material-icons"><ng-content></ng-content></span>
+    <div class="btn-div" (mouseenter)="this.hoverDiv(true)" (mouseleave)="this.hoverDiv(false)" [ngStyle]="{'background-color': this._currentBgColor}">
+      <button>  
+          <span class="material-icons" [ngStyle]="{'color':this._currentFgColor}"><ng-content></ng-content></span>
       </button>
     </div>
   `,
   styleUrls: ['mat-icon-btn.component.css']
 })
 export class MatIconBtnComponent implements OnInit {
-  hoverColor = '#128C7E';
-  baseColor = '#075E54';
-  _currentColor = this.baseColor;
+  _bgColor = '#075E54';
+  _bgHoverColor = 'unset';
+  _currentBgColor = this._bgColor;
+
+  _fgColor='white';
+  // _fgHoverColor = this._fgColor;
+  _currentFgColor = this._fgColor;
   
   constructor() {}
 
-  ngOnInit(): void { }
-
-  @Input()
-  ngHoverColor(c:string) {
-    this.hoverColor = c;
+  ngOnInit(): void { 
+    this.hoverDiv(false);
   }
 
   @Input()
-  ngBaseColor(c:string) {
-    this.baseColor = c;
+  set bgHoverColor(c:string) {
+    this._bgHoverColor = c;
   }
 
-  colorDiv(c:any){
-    this._currentColor = c;
+  @Input()
+  set bgColor(c: string) {
+    this._bgColor = c;
+  }
+
+  @Input()
+  set fgColor(c: string) {
+    this._fgColor = c;
+  }
+
+  // @Input()
+  // set fgHoverColor(c: string) {
+  //   this._fgHoverColor = c;
+  // }
+
+  hoverDiv(flag: boolean){
+    if(flag){
+      this._currentBgColor = this._bgHoverColor;
+      // this._currentFgColor = this._fgHoverColor;
+    } else{
+      this._currentBgColor = this._bgColor;
+      this._currentFgColor = this._fgColor;
+    }
   }
 }
